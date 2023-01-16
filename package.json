@@ -1,0 +1,38 @@
+{
+  "private": true,
+  "author": "eternallycyf <a969475322@gmail.com>",
+  "scripts": {
+    "build": "max build",
+    "dev": "max dev",
+    "format": "prettier --cache --write .",
+    "postinstall": "max setup",
+    "prepare": "husky install",
+    "setup": "max setup",
+    "start": "npm run dev"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^4.7.0",
+    "@ant-design/pro-components": "^2.0.1",
+    "@umijs/max": "^4.0.46",
+    "antd": "^5.0.0",
+    "classnames": "^2.2.6",
+    "js-cookie": "^3.0.1",
+    "lodash": "^4.17.19",
+    "redux-persist": "^6.0.0"
+  },
+  "devDependencies": {
+    "@types/dva": "^1.1.0",
+    "@types/js-cookie": "^3.0.2",
+    "@types/lodash": "^4.14.191",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "cross-env": "^7.0.3",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "mockjs": "^1.1.0",
+    "prettier": "^2.7.1",
+    "prettier-plugin-organize-imports": "^2",
+    "prettier-plugin-packagejson": "^2",
+    "typescript": "^4.1.2"
+  }
+}
