@@ -2,7 +2,7 @@
 import Router from '../src/routes';
 import { getBreadcrumbNameMap } from '../src/utils/menu';
 
-const menuList = [
+export const menuList = [
   {
     children: null,
     code: 'react_index_page',
@@ -138,7 +138,7 @@ const menuList = [
     url: null,
   },
 ];
-const breadcrumbNameMap = getBreadcrumbNameMap(menuList, Router);
+export const breadcrumbNameMap = getBreadcrumbNameMap(menuList, Router);
 
 export default {
   'POST /fetchUserInfo': {

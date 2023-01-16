@@ -1,6 +1,7 @@
 import TagsNav from '@/components/TagsNav';
 import { ConnectState } from '@/typings/connect';
 import { connect, getDvaApp, withRouter } from '@umijs/max';
+import { menuList, breadcrumbNameMap } from '../../mock/user';
 
 const BasicLayout = (props: any) => {
   const { location, children } = props;
@@ -8,11 +9,16 @@ const BasicLayout = (props: any) => {
   const { breadcrumbNameMap = {}, menuList = [] } =
     getDvaApp()._store.getState().global;
 
-  const TagsNavProps = {
+  let TagsNavProps = {
     breadcrumbNameMap,
     menuList,
     location,
   };
+
+  if (!breadcrumbNameMap || !menuList) {
+    TagsNavProps.breadcrumbNameMap = breadcrumbNameMap;
+    TagsNavProps.menuList = menuList;
+  }
 
   return (
     <>
