@@ -18,4 +18,4 @@
   }
 ```
 
-![](./tag.png)
+<img src="https://raw.githubusercontent.com/eternallycyf/umi4-tab/main/public/tag.png" alt="stars">
