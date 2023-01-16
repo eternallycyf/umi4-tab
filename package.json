@@ -3,12 +3,14 @@
   "author": "eternallycyf <a969475322@gmail.com>",
   "scripts": {
     "build": "max build",
+    "build:pro": "cross-env NODE_ENV=production max build",
+    "deploy": "bash ./deploy.sh",
     "dev": "max dev",
     "format": "prettier --cache --write .",
     "postinstall": "max setup",
     "prepare": "husky install",
     "setup": "max setup",
-    "start": "npm run dev"
+    "start": "rm -rf ./src/pages/.DS_Store && cross-env NODE_ENV=development max dev"
   },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
