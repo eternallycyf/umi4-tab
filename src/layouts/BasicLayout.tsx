@@ -1,4 +1,5 @@
 import TagsNav from '@/components/TagsNav';
+import Router from '@/routes';
 import { ConnectState } from '@/typings/connect';
 import { connect, getDvaApp, withRouter } from '@umijs/max';
 
@@ -14,7 +15,7 @@ const BasicLayout = (props: any) => {
     location,
   };
 
-  console.log(TagsNavProps);
+  console.log(TagsNavProps, Router);
 
   return (
     <>
