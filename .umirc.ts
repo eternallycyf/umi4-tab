@@ -9,7 +9,10 @@ export default defineConfig({
     'process.env': process.env,
   },
   base: '/',
-  publicPath: '/',
+  publicPath:
+    process.env.NODE_ENV === 'production'
+      ? 'http://wangxince.site/umi4-tab/'
+      : '/',
   routes: routerConfig,
   layout: {
     title: 'tabs切换',

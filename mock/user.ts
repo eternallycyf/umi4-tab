@@ -141,13 +141,13 @@ export const menuList = [
 export const breadcrumbNameMap = getBreadcrumbNameMap(menuList, Router);
 
 export default {
-  'POST /fetchUserInfo': {
+  'POST /fetchUserInfos': {
     code: 200,
     msg: '请求成功',
     success: true,
     data: {},
   },
-  'POST /fetchMenu': {
+  'POST /fetchMenus': {
     code: 200,
     msg: '请求成功',
     success: true,
