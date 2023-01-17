@@ -5,7 +5,7 @@ import * as service from '@/services/global';
 import {
   menuList as MENU_LIST,
   breadcrumbNameMap as BREAD_CRUMB_NAEMMAP,
-} from '../../mock/user';
+} from './constant';
 
 export interface IGlobalModelState {
   userInfo: UserInfo<number | string>;
