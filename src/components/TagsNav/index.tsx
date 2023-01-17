@@ -3,7 +3,7 @@ import { localStore } from '@/utils/storage';
 import _ from 'lodash';
 import pathToRegexp from 'path-to-regexp';
 import React, { useEffect, useState } from 'react';
-import { history, withRouter } from '@umijs/max';
+import { History, history, useLocation, withRouter } from '@umijs/max';
 import { RouterProps } from 'react-router';
 import MenuTabs, { MenuTab } from './MenuTabs';
 import { ConnectState } from '@/typings/connect';
@@ -23,7 +23,7 @@ function getMetaDataOfTab(
  * @param metaData
  * @param location
  */
-function setPathName(metaData: MenuItem, location: RouterProps) {
+function setPathName(metaData: MenuItem, location: History['location']) {
   if (!metaData) return 'Error';
   if (metaData.multiple) {
     const title =
@@ -50,18 +50,18 @@ function addTab(newTab: MenuTab, activeTabs: MenuTab[]): any[] {
 export interface PageTabsProps {
   children?: any;
   menuList: MenuItem[];
-  location: RouterProps['location'];
+  location: History['location'];
   breadcrumbNameMap: MenuItem;
 }
 
 const PageTabs: React.FC<PageTabsProps> = (props) => {
   const [tabChildren, setTabChildren] = useState<any>({});
   const [tabs, setTabs] = useState<MenuTab[]>(localStore.get('tabs') || []);
+  const location = useLocation();
+  const _activeKey = location.pathname;
+  const [activeKey, setActiveKey] = useState<string>(location.pathname);
 
-  const _activeKey = window.location.pathname;
-  const [activeKey, setActiveKey] = useState<string>(window.location.pathname);
-
-  const { children, location, breadcrumbNameMap } = props;
+  const { children, breadcrumbNameMap } = props;
 
   useEffect(() => {
     window.closeTab = handleRemove;
@@ -70,10 +70,8 @@ const PageTabs: React.FC<PageTabsProps> = (props) => {
   });
 
   useEffect(() => {
-    const metaData = getMetaDataOfTab(
-      window.location.pathname,
-      breadcrumbNameMap,
-    );
+    console.log(location.pathname);
+    const metaData = getMetaDataOfTab(location.pathname, breadcrumbNameMap);
     const activeTitle = setPathName(metaData, location);
 
     if (!metaData) {

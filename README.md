@@ -27,45 +27,6 @@
 ```js
 # .umirc.ts
   base: '/umi4-tab/',
-
-# config/config.ts
-export const homePagePath = '/umi4-tab';
-export const mockBaseUrl = '/umi4-tab';
-
-# 初始化获取的路由需要加上前缀 例如
- {
-    children: null,
-    code: 'react_index_page',
-    component: null,
-    icon: null,
-    id: 'index',
-    name: '首页',
-    path: mockBaseUrl,
-    upperId: '0',
-    url: null,
-  },
-```
-
-## 如果部署在根目录
-
-```js
-# .umirc.ts
-  base: '/',
-# config/config.ts
-export const homePagePath = '/';
-export const mockBaseUrl = '';
-# 初始化获取的路由需要加上前缀 例如
- {
-    children: null,
-    code: 'react_index_page',
-    component: null,
-    icon: null,
-    id: 'index',
-    name: '首页',
-    path: mockBaseUrl,
-    upperId: '0',
-    url: null,
-  },
 ```
 
 ## 页签切换后不触发生命周期

@@ -15,6 +15,8 @@ const BasicLayout = (props: any) => {
     location,
   };
 
+  console.log(TagsNavProps);
+
   return (
     <>
       <TagsNav {...TagsNavProps}>{children}</TagsNav>
