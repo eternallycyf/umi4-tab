@@ -15,12 +15,9 @@ const BasicLayout = (props: any) => {
     location,
   };
 
-  console.log(TagsNavProps, Router);
-
   return (
     <>
-      <TagsNav {...TagsNavProps} />
-      {children}
+      <TagsNav {...TagsNavProps}>{children}</TagsNav>
     </>
   );
 };
