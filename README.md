@@ -18,4 +18,52 @@
   }
 ```
 
-<img src="https://raw.githubusercontent.com/eternallycyf/umi4-tab/main/public/tag.png" alt="stars">
+- <img src="https://raw.githubusercontent.com/eternallycyf/umi4-tab/main/public/tag.png" alt="stars">
+
+## 如果部署在其他路径下
+
+- 例如 xxx.com/aaa/
+
+```js
+# .umirc.ts
+  base: '/umi4-tab/',
+
+# config/config.ts
+export const homePagePath = '/umi4-tab';
+export const mockBaseUrl = '/umi4-tab';
+
+# 初始化获取的路由需要加上前缀 例如
+ {
+    children: null,
+    code: 'react_index_page',
+    component: null,
+    icon: null,
+    id: 'index',
+    name: '首页',
+    path: mockBaseUrl,
+    upperId: '0',
+    url: null,
+  },
+```
+
+## 如果部署在根目录
+
+```js
+# .umirc.ts
+  base: '/',
+# config/config.ts
+export const homePagePath = '/';
+export const mockBaseUrl = '';
+# 初始化获取的路由需要加上前缀 例如
+ {
+    children: null,
+    code: 'react_index_page',
+    component: null,
+    icon: null,
+    id: 'index',
+    name: '首页',
+    path: mockBaseUrl,
+    upperId: '0',
+    url: null,
+  },
+```

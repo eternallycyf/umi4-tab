@@ -11,7 +11,7 @@ import { connect } from 'dva';
 import React from 'react';
 import { RouterProps } from 'react-router';
 import styles from './index.less';
-const homePagePath = '/';
+import { homePagePath } from '@/config';
 
 export enum closeType {
   refresh = 'refresh',

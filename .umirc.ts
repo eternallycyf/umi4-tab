@@ -8,7 +8,7 @@ export default defineConfig({
   define: {
     'process.env': process.env,
   },
-  base: '/',
+  base: process.env.NODE_ENV === 'production' ? '/umi4-tab/' : '/',
   publicPath:
     process.env.NODE_ENV === 'production'
       ? 'http://wangxince.site/umi4-tab/'

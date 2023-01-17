@@ -7,7 +7,7 @@ import { history, withRouter } from '@umijs/max';
 import { RouterProps } from 'react-router';
 import MenuTabs, { MenuTab } from './MenuTabs';
 import { ConnectState } from '@/typings/connect';
-const homePagePath = '/'
+import { homePagePath } from '@/config';
 
 function getMetaDataOfTab(
   pathname: string,
