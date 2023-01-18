@@ -7,7 +7,7 @@ permissions:
 on:
   push:
     branches:
-      - main # default branch
+      - main # default  branch
 
 jobs:
   deploy:
